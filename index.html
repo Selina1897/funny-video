@@ -1,20 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-<style>
-html, body { margin:0; background:black; }
-video { width:100vw; height:100vh; object-fit:cover; }
-</style>
+  <meta charset="UTF-8">
+  <title>Funny Video</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+    }
+    button {
+      font-size: 24px;
+      padding: 15px 30px;
+      cursor: pointer;
+    }
+    video {
+      display: none;
+      width: 80%;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-<video autoplay muted playsinline>
-  <source src="video.mp4" type="video/mp4">
-</video>
+  <h1>Klick nicht.</h1>
+  <button onclick="startJumpscare()">KLICK</button>
 
-<audio autoplay>
-  <source src="scream.mp3" type="audio/mpeg">
-</audio>
+  <video id="video" src="jumpscare.mp4"></video>
+  <audio id="sound" src="scream.mp3"></audio>
+
+  <script>
+    function startJumpscare() {
+      const video = document.getElementById("video");
+      const sound = document.getElementById("sound");
+
+      video.style.display = "block";
+      video.play();
+      sound.play();
+    }
+  </script>
 
 </body>
 </html>
